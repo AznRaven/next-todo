@@ -1,6 +1,6 @@
 import Image from "next/image";
 import TodoList from "./(components)/TodoList";
-import AddTodo from "./(components)/AddTodo";
+import TodoAdd from "./(components)/TodoAdd";
 
 async function getData() {
   // const res = await fetch('http://localhost/api/posts')
@@ -22,7 +22,7 @@ export default async function Home() {
       <div className="max-w-4xl mx-auto mt-4">
         <div className="my-5 flex-col gap-4">
           <h1 className="text-5xl font-bold mb-10">Todos</h1>
-          <AddTodo />
+          <TodoAdd />
         </div>
         <TodoList className="" todos={todos} />
       </div>

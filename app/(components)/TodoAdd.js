@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import Modal from "./Modal";
-import { RouterContext } from "next/dist/shared/lib/router-context.shared-runtime";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
-const AddTodo = () => {
+const TodoAdd = () => {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
@@ -74,4 +73,4 @@ const AddTodo = () => {
   );
 };
 
-export default AddTodo;
+export default TodoAdd;
