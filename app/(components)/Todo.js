@@ -1,10 +1,11 @@
-"use client";
-import React, { useState } from "react";
+// "use client";
+// import React, { useState } from "react";
+import React from "react";
 import TodoDelBtn from "./TodoDelBtn";
 import TodoEditBtn from "./TodoEditBtn";
 
 const Todo = ({ todo }) => {
-  const [openModalEdit, setOpenModalEdit] = useState(false);
+  // const [openModalEdit, setOpenModalEdit] = useState(false);
 
   const handleOpenModalEdit = () => {
     setOpenModalEdit(true);
@@ -21,12 +22,6 @@ const Todo = ({ todo }) => {
           </label>
         </div>
         <div className="flex flex-col justify-around">
-          {/* <button
-            className="text-blue-700 mr-3"
-            onClick={() => setOpenModalEdit(true)}
-          >
-            Edit
-          </button> */}
           <TodoEditBtn todo={todo}/>
           <TodoDelBtn id={todo.id}/>
         </div>
