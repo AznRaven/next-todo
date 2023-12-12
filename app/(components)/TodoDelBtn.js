@@ -23,7 +23,7 @@ const TodoDelBtn = ({ id }) => {
   return (
     <div>
       <button
-        className="text-red-700 mr-3"
+        className="text-red-700 mr-3 hover:text-red-100 hover:animate-bounce"
         onClick={() => handleDeletePost(id)}
       >
         <svg

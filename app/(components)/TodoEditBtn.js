@@ -39,7 +39,8 @@ const TodoEditBtn = ({ todo }) => {
         className="text-blue-700 mr-3"
         onClick={() => setOpenModalEdit(true)}
       >
-        <PencilSquareIcon className="h-6 w-6 text-blue-600" />
+        <PencilSquareIcon className="h-6 w-6 text-blue-600 hover:text-blue-100 hover:animate-bounce" />
+        
       </button>
       <Modal modalOpen={openModalEdit} setModalOpen={setOpenModalEdit}>
         <form className="w-full" onSubmit={handleEditSubmit}>

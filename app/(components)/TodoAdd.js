@@ -44,7 +44,7 @@ const TodoAdd = () => {
       </button>
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
         <form className="w-full" onSubmit={handleSubmit}>
-          <h1 className="text-2xl pb-3 ">Add Post</h1>
+          <h1 className="text-2xl pb-3 font-bold">Add Todo Item</h1>
           <input
             type="text"
             value={input.title}
