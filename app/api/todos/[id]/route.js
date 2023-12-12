@@ -19,35 +19,38 @@ export const GET = async (req, { params }) => {
   }
 };
 
-export const PATCH = async (req,{params})=>{
-    try {
-        const body = await req.json()
-        const {title, item,completed} = body
+export const PATCH = async (req, { params }) => {
+  try {
+    console.log("PATCH");
+    const body = await req.json();
+    const { title, item, completed } = body;
 
-        const {id} = params
+    const { id } = params;
 
-        const updatedTodo = await prisma.todo.update({
-            where:{id},
-            data:{title,item,completed}
-        })
-        if(!updatedTodo){
-            return NextResponse.json({message:'Update Failed'},{status:500})
-        }
-        return NextResponse.json(updatedTodo)
-    } catch (error) {
-        return NextResponse.json({message:'PATCH Error',error},{status: 500})
+    const updatedTodo = await prisma.todo.update({
+      where: { id },
+      data: { title, item, completed },
+    });
+    if (!updatedTodo) {
+      return NextResponse.json({ message: "Update Failed" }, { status: 500 });
     }
-}
+    return NextResponse.json(updatedTodo);
+  } catch (error) {
+    return NextResponse.json(
+      { message: "PATCH Error", error },
+      { status: 500 }
+    );
+  }
+};
 
-export const DELETE = async (req,{params})=>{
-    try {
-        console.log('DELETE')
-        const {id} = params
+export const DELETE = async (req, { params }) => {
+  try {
+    console.log("DELETE");
+    const { id } = params;
 
-        await prisma.todo.delete({where:{id}
-        })
-        return NextResponse.json({message:'Todo Deleted'},{status:500})
-    } catch (error) {
-        return NextResponse.json({message:'DELETE Error',error},{status500})
-    }
-}
+    await prisma.todo.delete({ where: { id } });
+    return NextResponse.json({ message: "Todo Deleted" }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({ message: "DELETE Error", error }, { status500 });
+  }
+};
