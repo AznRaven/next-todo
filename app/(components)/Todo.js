@@ -19,8 +19,8 @@ const Todo = ({ todo }) => {
           {/* <input id={todo.id} className="w-10 h-10 me-5" type="checkbox" /> */}
           <TodoCheckBtn todo={todo}/>
           <label htmlFor={todo.id} className="grow cursor-pointer">
-            <h1 className={`text-2xl font-bold ${todo.completed ? 'line-through': ''}`}>{todo.title}</h1>
-            <p>{todo.item}</p>
+            <h1 className={`text-2xl font-bold ${todo.completed ? 'line-through': ''} dark:text-slate-700`}>{todo.title}</h1>
+            <p className="dark:text-slate-600">{todo.item}</p>
           </label>
         </div>
         <div className="flex flex-col justify-around">

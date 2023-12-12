@@ -3,7 +3,6 @@ import TodoList from "./(components)/TodoList";
 import TodoAdd from "./(components)/TodoAdd";
 
 async function getData() {
-  // const res = await fetch('http://localhost/api/posts')
   const res = await fetch("http://localhost:3000/api/todos", {
     cache: "no-store",
   });
