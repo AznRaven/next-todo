@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { PencilSquareIcon } from "@heroicons/react/24/solid";
 
 const TodoEditBtn = ({ todo }) => {
   const router = useRouter();
@@ -11,7 +12,7 @@ const TodoEditBtn = ({ todo }) => {
   const [openModalEdit, setOpenModalEdit] = useState(false);
 
   const handleEditSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     axios
       .patch(`/api/todos/${todo.id}`, todoToEdit)
       .then((res) => {
@@ -37,8 +38,8 @@ const TodoEditBtn = ({ todo }) => {
       <button
         className="text-blue-700 mr-3"
         onClick={() => setOpenModalEdit(true)}
-        >
-        Edit
+      >
+        <PencilSquareIcon className="h-6 w-6 text-blue-600" />
       </button>
       <Modal modalOpen={openModalEdit} setModalOpen={setOpenModalEdit}>
         <form className="w-full" onSubmit={handleEditSubmit}>
