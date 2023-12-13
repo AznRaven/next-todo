@@ -37,7 +37,7 @@ const TodoAdd = () => {
   return (
     <div>
       <button
-        className="bg-blue-500 w-fit text-fit px-5 py-2 text-white font-bold"
+        className=" w-fit text-fit px-5 py-2 font-bold border border-slate-700"
         onClick={() => setModalOpen(true)}
       >
         Add
